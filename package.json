@@ -1,0 +1,13 @@
+{
+  "name": "smile-books",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A pastel 3D bookshelf for interactive children's storybooks, generated from folders.",
+  "scripts": {
+    "build": "node build-catalog.mjs"
+  },
+  "dependencies": {
+    "jsdom": "^29.1.1"
+  }
+}
