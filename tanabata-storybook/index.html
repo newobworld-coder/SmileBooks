@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151d55">
+  <meta name="description" content="The River of Stars — a gentle animated Tanabata story for young children.">
+  <title>The River of Stars · A Tanabata Tale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-star">✦</span> TANABATA <span class="brand-rule"></span> 七夕</div>
+      <div class="top-actions">
+        <button class="narrator-toggle" id="readToggle" type="button" aria-pressed="false" aria-label="Start read aloud">
+          <span class="narrator-icon" aria-hidden="true">▶</span><span class="narrator-label">Read aloud</span>
+        </button>
+        <button class="sound-toggle icon-button" id="replayButton" type="button" aria-label="Replay this page" title="Replay this page">
+          <span aria-hidden="true">↻</span>
+        </button>
+        <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true" aria-label="Turn page sounds off">
+          <span class="sound-waves">◖))</span><span class="sound-label">Page sounds on</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="book-shell" aria-label="Interactive Tanabata storybook">
+      <div class="book" id="book">
+        <div class="page under-page" id="underPage" aria-hidden="true"></div>
+        <article class="page current-page" id="currentPage" aria-live="polite"></article>
+        <div class="book-spine" aria-hidden="true"></div>
+        <button class="corner corner-left" id="prevCorner" type="button" aria-label="Previous page"><span>‹</span></button>
+        <button class="corner corner-right" id="nextCorner" type="button" aria-label="Next page"><span>›</span></button>
+      </div>
+    </section>
+
+    <nav class="controls" aria-label="Book navigation">
+      <button class="nav-button" id="prevButton" type="button"><span aria-hidden="true">←</span> Back</button>
+      <div class="progress-wrap">
+        <div class="progress-dots" id="progressDots" aria-label="Story progress"></div>
+        <div class="page-count" id="pageCount">Cover</div>
+      </div>
+      <button class="nav-button primary" id="nextButton" type="button">Begin <span aria-hidden="true">→</span></button>
+    </nav>
+    <p class="hint">Tap a corner, swipe, or use the arrow keys <span aria-hidden="true">·</span> AI-generated narration</p>
+  </main>
+
+  <audio id="narrationAudio" preload="auto" aria-hidden="true"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
