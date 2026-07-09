@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090f2f">
+  <meta name="description" content="Haru Can Be Anything — an interactive read-aloud picture book about dream jobs.">
+  <title>Haru Can Be Anything! · Interactive Storybook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="world" aria-hidden="true">
+    <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div>
+    <div class="stars" id="stars"></div>
+  </div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>DREAM JOBS</span><i></i><b>未来</b></div>
+      <div class="top-actions">
+        <div class="discoveries" title="Surprises found"><span>✦</span><strong id="foundCount">0</strong><small>/ 12</small></div>
+        <button class="tool-button" id="fxToggle" type="button" aria-pressed="true" aria-label="Turn sound effects off"><span>♫</span><em>FX</em></button>
+        <button class="tool-button voice-button" id="readToggle" type="button" aria-pressed="false" aria-label="Start read aloud"><span id="voiceIcon">▶</span><em id="voiceLabel">Read</em></button>
+        <button class="tool-button" id="autoToggle" type="button" aria-pressed="false" aria-label="Turn automatic page turning on"><span>↻</span><em>Auto</em></button>
+      </div>
+    </header>
+
+    <section class="book-zone" aria-label="Interactive dream jobs storybook">
+      <div class="book" id="book">
+        <div class="page under-page" id="underPage" aria-hidden="true"></div>
+        <article class="page current-page" id="currentPage" aria-live="polite"></article>
+        <div class="paper-stack" aria-hidden="true"></div>
+        <div class="spine" aria-hidden="true"></div>
+        <div class="interaction-layer" id="interactionLayer" aria-hidden="true"></div>
+        <button class="corner corner-left" id="prevCorner" type="button" aria-label="Previous page">‹</button>
+        <button class="corner corner-right" id="nextCorner" type="button" aria-label="Next page">›</button>
+      </div>
+      <div class="tap-coach" id="tapCoach"><span>◎</span> Find the glowing surprise!</div>
+    </section>
+
+    <nav class="nav" aria-label="Story navigation">
+      <button class="nav-button" id="prevButton" type="button"><span>←</span><em>Back</em></button>
+      <div class="progress">
+        <div class="dots" id="dots" aria-label="Story progress"></div>
+        <p id="pageCount">Cover</p>
+      </div>
+      <button class="nav-button next" id="nextButton" type="button"><em>Begin</em><span>→</span></button>
+    </nav>
+    <p class="footer-note">Tap, swipe, or use arrow keys <span>·</span> AI-generated narration</p>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="narrationAudio" preload="auto" aria-hidden="true"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
